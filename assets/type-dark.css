@@ -39,8 +39,3 @@ body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:3;opac
 footer{background:#0b0d12!important;color:#bbb4aa!important}
 @media(max-width:800px){.hero h1{font-size:clamp(51px,11vw,80px)}.hero-right{min-height:400px}.stage-frame{transform:none}.nav{height:65px}}
 @media(max-width:420px){.hero h1{font-size:clamp(49px,12vw,68px)}.hero-right{min-height:355px}.stage-frame{aspect-ratio:1/1}}
-
-/* Confirmed qzq.at heading font stack, supplied by user via DevTools screenshot. */
-:root{--hou-display-cn:'ZCOOL QingKe HuangYou', 'PingFang SC', sans-serif;--hou-display-en:'Anton', 'Anton Fallback', Impact, sans-serif;}
-.hero h1,.section-top h2,.about h2,.contact h2,.project h3,.process h2,.footer-logo,.identity,.stage h2{font-family:var(--hou-display-cn)!important;font-weight:400!important;}
-.hero .stat strong,.metrics strong,.hero-number,.stat-num{font-family:var(--hou-display-en)!important;font-weight:400!important;}
