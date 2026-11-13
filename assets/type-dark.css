@@ -1,0 +1,46 @@
+/* V17: Original deep-ink editorial direction; font inspiration only, not a copy of another site's assets. */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;800;900&family=ZCOOL+QingKe+HuangYou&display=swap');
+:root{--ink:#f4f0e7;--blue:#ff6948;--orange:#ff6948;--cream:#11141a;--lime:#e1bc71;--line:rgba(245,240,229,.16)}
+body{background:#11141a;color:#f4f0e7;font-family:'Noto Sans SC','Microsoft YaHei',sans-serif}
+body:before{content:'';position:fixed;inset:0;pointer-events:none;z-index:3;opacity:.14;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.64' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E")}
+.nav{background:rgba(17,20,26,.93);border-color:#ffffff24;height:75px}
+.identity{font:400 25px 'ZCOOL QingKe HuangYou','Noto Sans SC',sans-serif;letter-spacing:.01em}
+.identity small,.hero-foot,.hero-edge,.kicker,.eyebrow,.tag,.project-bottom,.stage-top{font-family:'DM Mono',monospace!important}
+.identity small{color:#b0ada2}.logo{border:1px solid #cf7055;border-radius:4px;background:#b84730;box-shadow:3px 3px 0 #efc67e;transform:rotate(-4deg)}
+.navlinks a{color:#ece9df}.nav-cta{background:#d75a40;color:#fff;border:1px solid #f19c6b;border-radius:6px;box-shadow:3px 4px 0 #6d3029}
+.hero{background:radial-gradient(ellipse 55% 90% at 82% 36%,#54423770,transparent 77%),linear-gradient(130deg,#12151b 10%,#1f2026 60%,#161820 100%)}
+.hero h1,.section-top h2,.about h2,.contact h2,.project h3,.process h2,.footer-logo{font-family:'ZCOOL QingKe HuangYou','Noto Sans SC',sans-serif!important;font-weight:400!important;letter-spacing:-.025em!important}
+.hero h1{font-size:clamp(68px,7.4vw,122px);line-height:1.09;max-width:790px;text-wrap:balance}
+.hero h1 .outlined{color:#e7c78e!important;-webkit-text-stroke:0!important;text-shadow:2px 3px 0 #43352e}
+.hero h1 .asterisk{color:#ff6948}
+.hero-desc,.section-copy{color:#bcb7b0!important}.eyebrow{color:#dfbd83!important}
+.btn{border-radius:6px!important;box-shadow:3px 4px 0 #0d0e13!important;font-weight:700}
+.btn-primary{background:#d64d35!important;color:#fff!important;border:1px solid #f18d5b!important}.btn-ghost{background:#29292b!important;color:#e7e4da!important;border:1px solid #9e9180!important}
+.hero-foot,.hero-edge{color:#a69f92!important;border-color:#ffffff25!important}
+.hero-right{perspective:1200px}
+.stage-frame{background:radial-gradient(circle at 45% 32%,#6e716c70,transparent 48%),linear-gradient(135deg,#41433f,#202b2e 55%,#1a2028);border:1px solid #867a69;border-radius:18px;box-shadow:inset 0 0 0 7px #181f22,0 40px 80px #0007,0 0 90px #b47d3518;transform:rotate(-2deg)}
+.stage-frame:before{border:1px solid #e4c79540;border-radius:10px}
+.stage-frame:after{content:'EXPERIMENT / 001 — ACTIVE';position:absolute;bottom:22px;left:28px;color:#efd8af;font:11px 'DM Mono',monospace;letter-spacing:.12em}
+.stage-top,.stage-bottom{color:#d0b792!important}.orbit-chip{border-radius:5px!important;background:#ddd0b8!important;border-color:#4b4541!important;color:#1d2324!important}
+.core{filter:sepia(.55) saturate(.8) brightness(.85)}.halo{filter:sepia(.4)}
+.ticker{background:#c85038!important;color:#fff!important}.ticker-track{color:#fff!important}
+.work,.about{background:linear-gradient(180deg,#151820,#1a1b21)!important;color:#eee9df!important}
+.section-top h2{font-size:clamp(46px,5vw,82px)!important}.section-top h2 span,.about h2 span{color:#f4be75!important}
+.project{border-radius:9px!important;box-shadow:0 15px 42px #0006,inset 0 1px 0 #ffffff28!important;border:1px solid #fff3!important}
+.project-primary{background:linear-gradient(135deg,#243b4d,#0f202e)!important;color:#f9f2e4!important}
+.project-peach{background:linear-gradient(135deg,#824331,#3a2825)!important;color:#fff1de!important}
+.project-lime{background:linear-gradient(135deg,#3e5647,#1c302e)!important;color:#f6f1df!important}
+.project-violet{background:linear-gradient(135deg,#49425d,#242137)!important;color:#f2eaf8!important}
+.project h3{font-size:clamp(32px,3.3vw,54px)!important}.project .tag{color:#ffe1ac}
+.process{background:#20222a!important}.process-rail{border-radius:8px}.process .section-top h2 span{color:#e6b779!important}
+.about-visual{border-radius:8px!important;background:linear-gradient(135deg,#3c332f,#181d26)!important}
+.about-mark{color:#e7bd7e!important}
+.contact{background:radial-gradient(circle at 80% 40%,#4d302a,#1b2027 65%)!important;color:#f6f0e5!important}.contact h2 span{color:#ecc17e!important}.contact-panel{background:#24282e!important;border:1px solid #7f6557!important;color:#f6f0e5!important;border-radius:10px!important}.contact-email{color:#e8c79d!important}
+footer{background:#0b0d12!important;color:#bbb4aa!important}
+@media(max-width:800px){.hero h1{font-size:clamp(51px,11vw,80px)}.hero-right{min-height:400px}.stage-frame{transform:none}.nav{height:65px}}
+@media(max-width:420px){.hero h1{font-size:clamp(49px,12vw,68px)}.hero-right{min-height:355px}.stage-frame{aspect-ratio:1/1}}
+
+/* Confirmed qzq.at heading font stack, supplied by user via DevTools screenshot. */
+:root{--hou-display-cn:'ZCOOL QingKe HuangYou', 'PingFang SC', sans-serif;--hou-display-en:'Anton', 'Anton Fallback', Impact, sans-serif;}
+.hero h1,.section-top h2,.about h2,.contact h2,.project h3,.process h2,.footer-logo,.identity,.stage h2{font-family:var(--hou-display-cn)!important;font-weight:400!important;}
+.hero .stat strong,.metrics strong,.hero-number,.stat-num{font-family:var(--hou-display-en)!important;font-weight:400!important;}
