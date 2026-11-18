@@ -36,7 +36,9 @@ for (const project of data.projects) checkLocalReference(join(root, 'index.html'
 for (const note of data.notes) checkLocalReference(join(root, 'index.html'), `assets/${note.image}`);
 for (const product of data.products) if (product.download) checkLocalReference(join(root, 'index.html'), product.download);
 checkLocalReference(join(root, 'index.html'), `assets/${data.featuredVideo.image}`);
+checkLocalReference(join(root, 'index.html'), `assets/${data.featuredArticle.image}`);
 checkLocalReference(join(root, 'index.html'), `assets/${data.featuredBook.image}`);
+for (const download of data.featuredBook.downloads) checkLocalReference(join(root, 'index.html'), download.href);
 
 if (failures.length) {
   console.error('发现失效的本地链接或资源：\n' + failures.map(item => `- ${item}`).join('\n'));

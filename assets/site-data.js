@@ -65,18 +65,30 @@ window.HOU_SITE = {
   ],
 
   featuredVideo: {
-    eyebrow: '实践视频 · 内容筹备中',
-    title: '用 AI 做一个自己的英语学习工具',
-    description: '从想法、开发到手机端使用，记录真实的实践过程。',
-    image: 'english.webp',
-    href: '#note/english'
+    eyebrow: '抖音 · 视频主页',
+    title: '在抖音看我的最新视频',
+    description: '工具开发、商业研究和实际操作的视频记录。',
+    image: 'office.webp',
+    href: 'https://www.douyin.com/user/self?from_tab_name=main&showSubTab=video&showTab=post'
+  },
+
+  featuredArticle: {
+    category: '微信公众号',
+    title: '我让AI整理了373个赚钱方法，发现“能做”和“能赚钱”差得很远',
+    description: '从项目清单回到真实需求、成交和交付，重新思考应该怎样选择项目。',
+    image: 'office.webp',
+    href: 'https://mp.weixin.qq.com/s/qscCOEBJ2KiBs-fmlXdbVg'
   },
 
   featuredBook: {
-    eyebrow: '原创小说 · 已完稿，待上线',
-    title: '今夜替我送葬',
-    description: '我的悬疑小说创作实验，记录从写作到完稿的过程。',
-    image: 'store-hero.webp'
+    eyebrow: '原创电子书 · 免费下载',
+    title: '造一门生意：从想法到第一笔收入',
+    description: '把一个想法，变成能持续赚钱的小生意。',
+    image: 'book-build-a-business.png',
+    downloads: [
+      { label: '下载 PDF', href: 'downloads/build-a-business-first-income.pdf' },
+      { label: '下载 EPUB', href: 'downloads/build-a-business-first-income.epub' }
+    ]
   },
 
   externalLinks: [
