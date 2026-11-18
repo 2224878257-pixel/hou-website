@@ -1,7 +1,7 @@
 /* Keep all existing routes and page content, share the personal navigation. */
 (()=>{
- const primary=[['home','首页'],['lab','产品'],['notes','文章'],['videos','视频'],['books','书籍']];
- const extra=[['research','商业研究'],['store','商城'],['global','出海探索'],['tools','工具推荐'],['saved','我的收藏'],['design','创意设计'],['growth','商业增长'],['brand','品牌合作'],['community','开张社'],['about','关于我']];
+ const primary=[['home','首页'],['lab','项目'],['notes','文章'],['videos','视频'],['books','书籍']];
+ const extra=[['research','商业研究'],['store','资源下载'],['tools','工具推荐'],['growth','商业合作'],['about','关于我']];
  const navLinks=(items,prefix)=>items.map(([id,label])=>`<a href="${prefix}#${id}" data-route="${id}">${label}</a>`).join('');
  if(document.getElementById('content')){
    const header=document.querySelector('main>header');

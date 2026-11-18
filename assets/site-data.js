@@ -16,7 +16,7 @@ window.HOU_SITE = {
       title: '我在闲鱼研究了几百个商品',
       description: '从商品背后的真实需求入手，观察可交付的小生意。',
       category: '商业探索',
-      image: 'office.webp',
+      image: 'cover-xianyu-research.webp',
       body: [
         '研究问题：闲鱼上的商品究竟在解决什么具体需求？',
         '观察到设计、办公自动化、网站定制等服务的共同点，是客户往往有明确交付目标。下一步是选择一个需求，发布小规模服务，记录咨询、成交与交付成本。'
@@ -38,7 +38,7 @@ window.HOU_SITE = {
       title: '我用AI分析马斯克的公开发言',
       description: '用公开资料研究商业判断，区分原始信息和推论。',
       category: '商业研究',
-      image: 'office.webp',
+      image: 'cover-musk-analysis.webp',
       body: [
         '研究对象是马斯克的公开发言、访谈与演讲。',
         '将资料整理为可检索的记录，再按主题分析其商业观点。公开言论不等于确定的未来，分析也需要保留来源与验证边界。'
@@ -58,8 +58,6 @@ window.HOU_SITE = {
   ],
 
   products: [
-    { id: 'workflow', category: 'AI 工具', name: 'AI 办公工作流', state: '开发计划', desc: '把重复操作梳理成可以复用的 AI 工作流。', detail: '适合需要重复整理资料、生成文档、处理表格的个人与小团队。当前尚处于产品规划阶段，未开放购买。', type: 'WORKFLOW', number: '01' },
-    { id: 'ads', category: '效率模板', name: '广告投放诊断模板', state: '开发计划', desc: '从素材、成本、转化到线索质量，一步步排查问题。', detail: '基于实际广告投放经验设计的诊断模板。计划包含数据检查、问题记录和优化实验。尚未公开销售。', type: 'GROWTH', number: '02' },
     { id: 'english', category: '学习资料', name: '英语学习工具', state: '体验介绍', desc: '为自己的英语学习设计的听说练习工具。', detail: '已经做过个人学习网页实验；当前商城尚未配置可确认的在线体验地址。', type: 'LEARNING', number: '03' },
     { id: 'validation', category: '效率模板', name: '需求验证记录表', state: '免费下载', desc: '从发现需求到成交验证，记录真实数据和下一步。', detail: '适合在闲鱼、小红书等渠道尝试新品的人。包含需求来源、客户问题、曝光、询问、订单、成本和复盘字段。CSV 可用 Excel 或其他表格软件打开。', type: 'VALIDATE', number: '04', download: 'downloads/validation.csv' }
   ],
@@ -68,7 +66,7 @@ window.HOU_SITE = {
     eyebrow: '抖音 · 视频主页',
     title: '在抖音看我的最新视频',
     description: '工具开发、商业研究和实际操作的视频记录。',
-    image: 'office.webp',
+    image: 'cover-douyin-videos.webp',
     href: 'https://www.douyin.com/user/self?from_tab_name=main&showSubTab=video&showTab=post'
   },
 
@@ -76,7 +74,7 @@ window.HOU_SITE = {
     category: '微信公众号',
     title: '我让AI整理了373个赚钱方法，发现“能做”和“能赚钱”差得很远',
     description: '从项目清单回到真实需求、成交和交付，重新思考应该怎样选择项目。',
-    image: 'office.webp',
+    image: 'cover-article-373-ideas.webp',
     href: 'https://mp.weixin.qq.com/s/qscCOEBJ2KiBs-fmlXdbVg'
   },
 
