@@ -63,11 +63,11 @@ window.HOU_SITE = {
   ],
 
   featuredVideo: {
-    eyebrow: '抖音 · 视频主页',
-    title: '在抖音看我的最新视频',
-    description: '工具开发、商业研究和实际操作的视频记录。',
+    eyebrow: '视频 · 抖音',
+    title: '本期精选视频',
+    description: '',
     image: 'cover-douyin-videos.webp',
-    href: 'https://www.douyin.com/user/self?from_tab_name=main&showSubTab=video&showTab=post'
+    href: 'https://www.douyin.com/video/7709504316477934857'
   },
 
   featuredArticle: {
