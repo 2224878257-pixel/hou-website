@@ -64,9 +64,9 @@ window.HOU_SITE = {
 
   featuredVideo: {
     eyebrow: '视频 · 抖音',
-    title: '本期精选视频',
+    title: '我研究了373个赚钱项目，发现方向错了',
     description: '',
-    image: 'cover-douyin-videos.webp',
+    image: 'douyin-7709504316477934857.jpg',
     href: 'https://www.douyin.com/video/7709504316477934857'
   },
 
