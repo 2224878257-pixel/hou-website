@@ -105,3 +105,40 @@ window.HOU_SITE = {
     '复盘交付成本，决定是否继续'
   ]
 };
+
+// 正式发布目录。书籍和模板引用已有资料，避免重复维护下载链接。
+{
+  const site = window.HOU_SITE;
+  const book = site.featuredBook;
+  const sheet = site.products.find(item => item.id === 'validation');
+  const defaults = {
+    status: '已上线', pricing: '免费使用', price: '免费', featured: true,
+    trial: '', purchase: '', apply: '', released: null, updated: null,
+    feedback: 'https://x.com/LaohouGrowth', screenshots: [], changelog: []
+  };
+  site.catalog = [
+    {
+      ...defaults, id: 'book-business', slug: 'build-a-business', name: book.title,
+      category: '数字商品', icon: '书', image: '/assets/' + book.image,
+      summary: book.description, description: '围绕从想法到第一笔收入的过程，讨论如何选择并验证一个小生意。',
+      features: ['PDF 固定版式阅读', 'EPUB 电子书阅读'], audience: '正在选择创业方向、准备验证第一个想法的读者。',
+      tutorial: '按阅读设备选择格式。电脑可用 PDF 阅读器，手机或电子书阅读器可导入 EPUB。',
+      downloads: book.downloads.map(d => ({ label: d.label, href: '/' + d.href })),
+      rights: '两个格式均可免费下载。', changelog: ['已提供 PDF 和 EPUB 两种格式。'],
+      faq: [['两种格式怎么选？','希望保留排版可选 PDF，希望调整字号可选 EPUB。']],
+      seo: { title: book.title + ' · 电子书下载', description: book.description, image: '/assets/' + book.image }
+    },
+    {
+      ...defaults, id: sheet.id, slug: 'demand-validation', name: sheet.name,
+      category: '数据与商业研究', icon: '表', image: '/assets/validation-preview.png',
+      screenshots: ['/assets/validation-preview.png'], summary: sheet.desc, description: sheet.detail,
+      features: ['整理需求来源与用户原话','跟踪曝光、咨询、订单和直接成本','记录验证结论与下一步'],
+      audience: '正在试卖商品、服务或数字产品的个人开发者与创业者。',
+      tutorial: '下载 CSV，用表格软件按 UTF-8 打开，按测试动作逐行填写。',
+      downloads: [{label: '下载 CSV', href: '/' + sheet.download}], rights: '免费获取完整 CSV 模板。',
+      changelog: ['已提供包含 15 个字段的 CSV 模板。'],
+      faq: [['下载后为什么只有表头？','这是空白记录表，从第二行开始填写自己的验证数据。']],
+      seo: { title: sheet.name + ' · CSV 模板下载', description: sheet.desc, image: '/assets/validation-preview.png' }
+    }
+  ];
+}
