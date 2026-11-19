@@ -5,4 +5,3 @@
 .marc-media:hover .video-play, .marc-media:focus-visible .video-play { background: #3434a3; }
 .marc-media:focus-visible { outline: 3px solid #3434a3; outline-offset: 3px; border-radius: 18px; }
 .marc-writing .marc-list img { object-fit: contain; background: #f8f8f7; }
-.marc-writing .marc-related { display: inline-block; margin: 8px 12px 0; padding: 5px 0; font-size: 14px; color: #555; }
