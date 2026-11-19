@@ -135,6 +135,13 @@ window.HOU_SITE = {
     {
       ...defaults, id: sheet.id, slug: 'demand-validation', name: sheet.name,
       feedbackQuestion: '你正在验证什么项目，填这张表时卡在哪一步？',
+      feedbackApi: '',
+      example: [
+        '需求来源：闲鱼上的设计、办公自动化和网站定制服务。当前笔记记录的是商品观察。',
+        '验证假设：客户更容易说清楚要交付什么。可以挑一个有明确交付物的需求进行测试。',
+        '下一步：发布一次小规模服务，记录咨询、成交和交付成本。',
+        '用户原话、订单量和成交金额：目前没有对应记录，先留空，待实际测试后填写。'
+      ],
       category: '数据与商业研究', icon: '表', image: '/assets/validation-preview.png',
       screenshots: ['/assets/validation-preview.png'], summary: sheet.desc, description: sheet.detail,
       features: ['整理需求来源与用户原话','跟踪曝光、咨询、订单和直接成本','记录验证结论与下一步'],
