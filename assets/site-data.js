@@ -16,8 +16,8 @@ window.HOU_SITE = {
       title: '我在闲鱼研究了几百个商品',
       description: '从商品背后的真实需求入手，观察可交付的小生意。',
       category: '商业探索',
-      image: 'cover-xianyu-research.webp',
-      thumbnail: 'cover-xianyu-research-thumb.webp',
+      image: 'research-xianyu.webp',
+      thumbnail: 'research-xianyu-thumb.webp',
       body: [
         '研究问题：闲鱼上的商品究竟在解决什么具体需求？',
         '观察到设计、办公自动化、网站定制等服务的共同点，是客户往往有明确交付目标。下一步是选择一个需求，发布小规模服务，记录咨询、成交与交付成本。'
@@ -28,8 +28,8 @@ window.HOU_SITE = {
       title: '我用AI搭建英语学习工具',
       description: '为自己的英语学习设计听说练习网页，记录开发和迭代过程。',
       category: 'AI实践',
-      image: 'english.webp',
-      thumbnail: 'english-thumb.webp',
+      image: 'research-english.webp',
+      thumbnail: 'research-english-thumb.webp',
       body: [
         '我需要能在手机上使用的英语练习工具。',
         '已经尝试用 AI 开发个人学习网页，重点是发音、听力和复习。当前继续优化朗读速度与自然度，暂不提供未确认的公开体验地址。'
@@ -40,8 +40,8 @@ window.HOU_SITE = {
       title: '我用AI分析马斯克的公开发言',
       description: '用公开资料研究商业判断，区分原始信息和推论。',
       category: '商业研究',
-      image: 'cover-musk-analysis.webp',
-      thumbnail: 'cover-musk-analysis-thumb.webp',
+      image: 'research-musk.webp',
+      thumbnail: 'research-musk-thumb.webp',
       body: [
         '研究对象是马斯克的公开发言、访谈与演讲。',
         '将资料整理为可检索的记录，再按主题分析其商业观点。公开言论不等于确定的未来，分析也需要保留来源与验证边界。'
@@ -77,8 +77,8 @@ window.HOU_SITE = {
     category: '微信公众号',
     title: '我让AI整理了373个赚钱方法，发现“能做”和“能赚钱”差得很远',
     description: '从项目清单回到真实需求、成交和交付，重新思考应该怎样选择项目。',
-    image: 'cover-article-373-ideas.webp',
-    thumbnail: 'cover-article-373-ideas-thumb.webp',
+    image: 'research-373.webp',
+    thumbnail: 'research-373-thumb.webp',
     href: 'https://mp.weixin.qq.com/s/qscCOEBJ2KiBs-fmlXdbVg'
   },
 
