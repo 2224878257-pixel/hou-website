@@ -130,6 +130,7 @@ window.HOU_SITE = {
     },
     {
       ...defaults, id: sheet.id, slug: 'demand-validation', name: sheet.name,
+      feedbackQuestion: '你正在验证什么项目，填这张表时卡在哪一步？',
       category: '数据与商业研究', icon: '表', image: '/assets/validation-preview.png',
       screenshots: ['/assets/validation-preview.png'], summary: sheet.desc, description: sheet.detail,
       features: ['整理需求来源与用户原话','跟踪曝光、咨询、订单和直接成本','记录验证结论与下一步'],
