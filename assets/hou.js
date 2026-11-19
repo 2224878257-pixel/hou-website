@@ -29,6 +29,25 @@ else if(id==='tools')html=head('工具推荐','公开研究入口，暂未配置
 else if(id==='growth')html=head('商业合作','基于8年广告营销经验，关注真实业务问题与可验证的增长结果。')+grid(['广告投放诊断','素材与转化链路分析','增长方案与实战陪跑','AI工具与内容合作'].map(t=>tile(t,'具体范围、交付与费用按需求沟通。','growth','#about')))+section('合作方式',`<div class="card"><h3>先沟通需求</h3><p>请说明业务、目标、现有问题与期望交付。当前通过 X 私信交流，不承诺效果或未确认的交付时间。</p><div class="actions"><a class="btn primary" href="https://x.com/LaohouGrowth" target="_blank" rel="noopener">联系侯同学 ↗</a></div></div>`);
 else if(id==='about')html=head('关于我','侯同学呀 · 独立创作者')+`<div class="article"><img class="profilephoto" src="assets/avatar.jpg" alt="侯同学本人" width="116" height="116"><h2>你好，我是侯同学。</h2><p>8年互联网广告营销经验，关注AI工具、商业增长和互联网生意。喜欢把遇到的问题做成工具，把实践过程记录下来。</p><h2>联系与合作</h2><p>欢迎交流AI应用、广告投放、数字产品与出海探索。</p><div class="actions"><a class="btn primary" href="https://x.com/LaohouGrowth" target="_blank" rel="noopener">X / Twitter ↗</a><a class="btn" href="https://github.com/2224878257-pixel" target="_blank" rel="noopener">GitHub ↗</a></div></div>`;
 else html=head('页面不存在','请通过导航继续探索。');content.innerHTML=html;document.title=route.title+'｜侯同学呀';}
-function search(){modal('搜索内容','<input id="query" type="search" placeholder="搜索栏目、项目、工具…" aria-label="搜索内容"><div id="results"></div>');const items=[...routes.map(r=>[r.title,'栏目','#'+r.id]),[featuredArticle.title,featuredArticle.description,featuredArticle.href],...notes.map(n=>[n[0],n[1],'#note/'+n[3]]),...projects.map(p=>[p[0],p[1],p[3]]),...external.map(e=>[e[0],e[1],e[2]]),...products.map(p=>[p.name,p.desc,'#store'])];function update(){let q=$('query').value.trim().toLowerCase();$('results').innerHTML=list(items.filter(i=>(i[0]+i[1]).toLowerCase().includes(q)).slice(0,8).map(i=>row(i[0],i[1],'',i[2])))}$('query').addEventListener('input',update);update();$('query').focus()}
+function search(){
+  modal('搜索内容','<input id="query" type="search" placeholder="搜索产品、文章、工具…" aria-label="搜索内容"><div id="results" aria-live="polite"></div>');
+  const items=[
+    ...site.catalog.map(p=>[p.name,p.summary,'/products/'+p.slug+'/']),
+    ['AIBEEP 产品中心','全部产品与工具','/products/'],
+    ...routes.map(r=>[r.title,'栏目','#'+r.id]),
+    [featuredArticle.title,featuredArticle.description,featuredArticle.href],
+    ...notes.map(n=>[n[0],n[1],'#note/'+n[3]]),
+    ...projects.map(p=>[p[0],p[1],p[3]]),
+    ...external.map(e=>[e[0],e[1],e[2]])
+  ];
+  function update(){
+    const terms=$('query').value.trim().toLowerCase().split(/\s+/);
+    const matches=items.filter(([t,d])=>terms.every(term=>(t+' '+d).toLowerCase().includes(term))).slice(0,8);
+    $('results').innerHTML=matches.length ? list(matches.map(([t,d,url])=>row(t,d,'',url))) : '<p>没有找到相关内容，可以试试产品名称或更短的关键词。</p>';
+  }
+  $('query').addEventListener('input',update);
+  update();
+  $('query').focus();
+}
 document.addEventListener('click',e=>{let b=e.target.closest('button');if(b?.dataset.product){let p=products.find(x=>x.id===b.dataset.product);modal(p.name,`<span class="pill">${p.state}</span><p>${p.detail}</p>${p.download?`<a class="btn primary" href="${p.download}" download>免费下载 ↓</a>`:''}`)}if(e.target.closest('#results a'))$('modal').close();if(e.target.closest('#nav a')){$('sidebar').classList.remove('open');$('menu').setAttribute('aria-expanded','false')}});
 $('searchBtn').onclick=search;$('close').onclick=()=>$('modal').close();$('menu').onclick=()=>{$('sidebar').classList.toggle('open');$('menu').setAttribute('aria-expanded',String($('sidebar').classList.contains('open')))};$('theme').onclick=()=>{document.documentElement.classList.toggle('dark');set('hou-dark',document.documentElement.classList.contains('dark'));$('theme').textContent=document.documentElement.classList.contains('dark')?'切换浅色模式':'切换深色模式'};if(get('hou-dark',false)){document.documentElement.classList.add('dark');$('theme').textContent='切换浅色模式'};document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)&&!$('modal').open){e.preventDefault();search()}});window.addEventListener('hashchange',()=>{render();window.scrollTo(0,0)});render();
