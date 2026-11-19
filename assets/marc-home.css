@@ -4,3 +4,5 @@
 .video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1; display: grid; place-items: center; width: 56px; height: 56px; border: 2px solid white; border-radius: 50%; background: #171717df; color: white; font: 23px/1 Arial,sans-serif; padding-left: 3px; box-sizing: border-box; box-shadow: 0 2px 10px #0005; pointer-events: none; }
 .marc-media:hover .video-play, .marc-media:focus-visible .video-play { background: #3434a3; }
 .marc-media:focus-visible { outline: 3px solid #3434a3; outline-offset: 3px; border-radius: 18px; }
+.marc-writing .marc-list img { object-fit: contain; background: #f8f8f7; }
+.marc-writing .marc-related { display: inline-block; margin: 8px 12px 0; padding: 5px 0; font-size: 14px; color: #555; }
