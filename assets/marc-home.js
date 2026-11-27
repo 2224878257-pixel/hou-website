@@ -1,22 +1,17 @@
-// Homepage presentation. Existing detail routes and product dialogs remain intact.
-const homeSections = () => `
- <div class="marc-layout">
-  <div class="marc-profile"><img src="assets/avatar.jpg" alt="侯同学本人" class="marc-avatar"><h1>侯同学呀</h1>
-   <p>8年互联网广告营销经验，目前在研究 AI、商业增长和互联网生意。</p>
-   <p>喜欢用 AI 做一些实用的工具，研究不同的商业项目，也会记录自己亲自尝试的过程和结果。</p>
-   <p>欢迎交流，一起做点有意思的事。</p>
-   <div class="marc-social"><a href="https://x.com/LaohouGrowth" target="_blank" rel="noopener">𝕏 Twitter</a><a href="https://github.com/2224878257-pixel" target="_blank" rel="noopener">GitHub ↗</a><a href="#about">关于我 ↗</a></div>
-   <div class="marc-contact"><a href="#growth">商业合作</a><a href="#store">资源下载</a></div>
-  </div>
-  <div class="marc-stream">
-   <section class="marc-block"><div class="marc-heading"><h2>产品与工具</h2><a href="/products/">全部产品 →</a></div><div class="marc-products">
-   ${site.catalog.filter(p=>p.featured && p.status!=='停止维护').map(p=>`<article class="marc-product"><div class="marc-product-top"><span class="marc-mark mark-0">${p.icon}</span><strong><a href="/products/${p.slug}/">${p.name}</a></strong><small>${p.status}</small></div><p>${p.summary}</p><div class="marc-product-bottom">${p.price} · <a href="/products/${p.slug}/">查看详情 →</a> ${p.status==='内测中' && p.apply ? `<a href="${p.apply}">申请体验</a>` : p.purchase ? `<a href="${p.purchase}">购买</a>` : p.trial ? `<a href="${p.trial}">免费使用</a>` : p.downloads?.length ? `<a href="${p.downloads[0].href}" download>免费下载</a>` : ''}</div></article>`).join('')}
-   </div><div class="marc-mini">${[['AI 实验室','/lab/','AI工具与真实实验','lab'],['商业研究','#research','需求、产品与增长观察','growth'],['资源下载','#store','工具、模板与原创资源','store'],['商业合作','#growth','广告诊断与增长实践','link']].map(p=>`<a href="${p[1]}"><span>${icon(p[3])}</span><div><strong>${p[0]}</strong><p>${p[2]}</p></div></a>`).join('')}</div></section>
-   <section class="marc-block marc-writing"><div><div class="marc-heading"><h2>文章精选</h2><a href="#notes">所有文章 →</a></div><div class="marc-list"><a href="${featuredArticle.href}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/${featuredArticle.thumbnail || featuredArticle.image}" alt=""><div><small>${featuredArticle.category}</small><strong>${featuredArticle.title}</strong></div></a>${site.notes.slice(0,1).map(n=>`<a href="#note/${n.slug}"><img loading="lazy" decoding="async" src="assets/${n.thumbnail || n.image}" alt=""><div><small>${n.category}</small><strong>${n.title}</strong></div></a>`).join('')}</div></div><div><div class="marc-heading"><h2>研究笔记</h2><a href="#notes">全部笔记 →</a></div><div class="marc-list">${site.notes.slice(1,3).map(n=>`<a href="#note/${n.slug}"><img loading="lazy" decoding="async" src="assets/${n.thumbnail || n.image}" alt=""><div><small>${n.category}</small><strong>${n.title}</strong></div></a>`).join('')}</div></div></section>
-   <section class="marc-block marc-video"><a class="marc-media" aria-label="在抖音播放：${featuredVideo.title}（新窗口）" href="${featuredVideo.href}" target="_blank" rel="noopener"><img loading="lazy" decoding="async" src="assets/${featuredVideo.image}" alt=""><span class="video-play" aria-hidden="true">▶</span></a><div><small>${featuredVideo.eyebrow}</small><h2>${featuredVideo.title}</h2><p>${featuredVideo.description}</p><a href="${featuredVideo.href}" target="_blank" rel="noopener">前往抖音观看 ↗</a><p><a href="/products/demand-validation/?entry=home_video">用需求验证表试一个想法 →</a></p></div></section>
-   <section class="marc-block marc-books"><div class="marc-heading"><h2>书籍与资源</h2><a href="#books">全部书籍 →</a></div><div class="marc-bookrow"><div class="marc-book-art"><img loading="lazy" decoding="async" src="assets/${featuredBook.image}" alt="${featuredBook.title}"></div><div><small>${featuredBook.eyebrow}</small><h2>${featuredBook.title}</h2><p>${featuredBook.description}</p><div class="actions">${featuredBook.downloads.map(d=>`<a class="marc-button" href="${d.href}" download>${d.label}</a>`).join('')}</div></div></div><div class="marc-resource"><div><strong>需求验证记录表</strong><p>记录真实需求、订单与交付成本。</p></div><a class="marc-button" href="downloads/validation.csv" download>免费下载</a></div></section>
-   <div class="marc-end">© 2026 侯同学呀 · <a href="#about">关于我</a> · <a href="#store">资源下载</a></div>
-  </div>
- </div>`;
+// Home-only view. The existing router continues to own all hash pages.
+const heading = (title, href, label) => `<div class="folio-heading"><h2>${title}</h2><a href="${href}">${label} →</a></div>`;
+const work = (image,title,category,href) => `<a class="work" href="${href}"><div class="work-art"><img src="assets/${image}" alt=""></div><small>${category}</small><h3>${title}</h3></a>`;
+function homeSections(){
+ const english=site.notes.find(n=>n.slug==='english'), market=site.notes.find(n=>n.slug==='xianyu');
+ return `<div class="folio"><nav class="folio-nav" aria-label="主页导航"><a href="#home"><b>侯同学呀</b> / AIBEEP</a><div><a href="/products/">产品</a><a href="#notes">文章</a><a href="/lab/">实验室</a><a href="#about">关于</a></div></nav>
+ <section class="signature"><img src="assets/avatar.jpg" alt="侯同学呀"><div><h1>侯同学呀</h1><p>8年互联网广告营销经验。研究 AI 工具、商业增长与出海探索，<br>把实践做成产品，也把过程写下来。</p></div></section>
+ <section>${heading('精选作品','/lab/','看实验室')}<div class="works">${[english,market].filter(Boolean).map(n=>work(n.image,n.title,n.category,'#note/'+n.slug)).join('')}</div></section>
+ <section>${heading('AI 工具与数字商品','/products/','全部产品')}<div class="rows">${site.catalog.map(p=>`<a href="/products/${p.slug}/"><b>${p.name}</b><span>${p.price}　↗</span></a>`).join('')}</div></section>
+ <section>${heading('最新图文文章','#notes','文章与研究')}<div class="rows">${[featuredArticle,...site.notes].map(n=>`<a href="${n.href||'#note/'+n.slug}"><img loading="lazy" src="assets/${n.thumbnail||n.image}" alt=""><b>${n.title}</b><span>${n.category}</span></a>`).join('')}</div></section>
+ <section>${heading('最近视频','#videos','视频')}<div class="marc-video"><a class="marc-media" href="${featuredVideo.href}" aria-label="在抖音播放"><img loading="lazy" src="assets/${featuredVideo.image}" alt=""><span class="video-play" aria-hidden="true">▶</span></a><div><small>抖音</small><h3>${featuredVideo.title}</h3><a href="${featuredVideo.href}">前往观看 ↗</a><p><a href="/products/demand-validation/?entry=home_video">配套需求验证表 →</a></p></div></div></section>
+ <section>${heading('书籍与资料','#books','书架')}<div class="shelf"><img loading="lazy" src="assets/${featuredBook.image}" alt="书封"><div><h3>${featuredBook.title}</h3><p>${featuredBook.description}</p>${featuredBook.downloads.map(d=>`<a class="file" href="${d.href}" download>${d.label} ↓</a>`).join('')}</div></div></section>
+ <section>${heading('商业服务','#growth','合作方式')}<div class="rows">${[['广告投放诊断','素材、渠道与转化问题清单'],['设计服务','广告素材与落地页设计'],['AI 自动化定制','流程梳理与工具原型']].map(([t,d])=>`<a href="#growth"><b>${t}</b><span>${d}</span></a>`).join('')}</div></section>
+ <footer><a href="#about">关于侯同学呀</a><a href="https://x.com/LaohouGrowth">X ↗</a><a href="https://github.com/2224878257-pixel">GitHub ↗</a></footer></div>`;
+}
 function presentHome(){const home=!location.hash||location.hash==='#home';document.body.classList.toggle('marc-home',home);if(home)document.getElementById('content').innerHTML=homeSections();}
 window.addEventListener('hashchange',presentHome);presentHome();

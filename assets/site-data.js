@@ -124,6 +124,7 @@ window.HOU_SITE = {
     {
       ...defaults, id: 'book-business', slug: 'build-a-business', name: book.title,
       category: '数字商品', icon: '书', image: '/assets/' + book.image,
+      contents: ["第一部分 看懂生意","第二部分 找到机会","第三部分 把想法变成产品","第四部分 让客户愿意付钱","第五部分 把生意做长久"],
       summary: book.description, description: '围绕从想法到第一笔收入的过程，讨论如何选择并验证一个小生意。',
       features: ['PDF 固定版式阅读', 'EPUB 电子书阅读'], audience: '正在选择创业方向、准备验证第一个想法的读者。',
       tutorial: '按阅读设备选择格式。电脑可用 PDF 阅读器，手机或电子书阅读器可导入 EPUB。',
